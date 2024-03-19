@@ -1,0 +1,72 @@
+<!DOCTYPE html><html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/link.css">
+</head>
+<body>
+<header>
+	<p>amorphousメンバー用&#160ver1.0.0</p>
+	<h1>参考書共有用</h1>
+	<p><a href="index.html">ホームに戻る</a></p><hr>
+</header>
+<main>
+<p>
+<!--説明を入れる-->
+</p>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<div id="comments"></div>
+<script>
+d3.csv("https://docs.google.com/spreadsheets/d/12YCB4iasTHqDn4sXF7Zssil1Bi_WPDxZB4a4jRK_LJQ/export?format=csv&range=A3:D", function(error, data){
+	var text = "";
+	for(var i=0; i<data.length; i++){
+		text += i+1 + " 名前: <a href=\"mailto:" + data[i].Mail + "\">" + data[i].Name + "</a> " + data[i].Timestamp + "<pre>" + data[i].Comments + "</pre>";
+	}
+	d3.select("#comments").html(text);
+});
+</script>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfVsw5-ST1OBII9WexN6oksYeFG0O4H1fE_AGJS1ou9C6YQvQ/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
+<p><input name="entry.602832305" placeholder="名前" value="名無し" required></p>
+<p><input name="entry.896781988" placeholder="メールアドレス" type="email"></p>
+<p><textarea name="entry.181937134" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required></textarea></p>
+<input type="submit" id="submitbutton" value="送信">
+</form>
+<iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
+
+<script type="text/javascript">
+var NGComments = ["死ね","バカ",".exe"]; // 簡易的なNGワードの設定
+var regex = new RegExp(NGComments.join("|"));
+function test(wcheck) {
+	if (wcheck.match(regex) != null) {
+		alert("ERROR: コメントにNGワードが含まれています");
+		return false;
+	}
+	document.getElementById("submitbutton").disabled = true;
+	textareas = document.getElementsByTagName('textarea');
+	for(var i=0 ;i < textareas.length ;i ++ ){
+		textareas[i].value = textareas[i].value.replace( /</g ,'&lt;' );
+	}
+	inputs = document.getElementsByTagName('input');
+	for(var i=0 ;i < inputs.length ;i ++ ){
+		inputs[i].value = inputs[i].value.replace( /</g ,'&lt;' );
+	}
+	return submitted=!0;
+}
+</script>
+</main>
+<footer>
+		<hr><h2>サイトマップ</h2>
+		<p>
+		<a href="index.html">ホーム</a><br>
+		<a href="news.html">お知らせ</a><br>
+		<a href="info.html">アモルファスについての情報</a><br>
+		<a href="account_info.html">アカウントの情報</a><br>
+		<a href="book.html">おすすめの参考書</a><br>
+		<a href="link.html">外部リンク集</a><br>
+		<a href="to_do.html">勉強すること</a><br>
+		<a href="help.html">このサイトについての情報</a><br>
+		<a href="schedule.html">今後の予定</a></p><br>
+		<p>by Osakaseiko-Amorphous
+		<br>mail address : sg.amr@outlook.jp</p>
+</footer>
+</body>
+</html>

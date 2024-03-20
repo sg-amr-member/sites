@@ -12,10 +12,7 @@ header p{
 .news{
     text-align: center;
 }
-.overview a{
-    text-align: center;
-}
-.overview h3{
+.overview h3,a{
     text-align: center;
 }
 .footer{
@@ -36,4 +33,7 @@ a:hover{
 }
 a:active{
     color: blueviolet;
+}
+footer{
+    text-align: center;
 }

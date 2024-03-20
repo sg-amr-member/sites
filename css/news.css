@@ -9,8 +9,12 @@ header{
 header p{
     text-align: right;
 }
-
-
+#news p{
+    font-size: medium;
+}
+#news .timestamp{
+    font-size: small;
+}
 .footer{
     background-color: rgb(171, 224, 180);
 }

@@ -12,19 +12,6 @@
 <main>
 
 
-<!--ここからSpreadSheetの一部を表示する-->
-<div id="news"></div>
-<script>
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-d3.csv("https://docs.google.com/spreadsheets/d/
-1MNKcyG3jl35vm8ZT7qvujRjH5Q3iPgk9Sw928e4aANw/
-export?format=csv&gid=1948877772", function(error, data){
-	var text = data[1].ert;
-	d3.select("#news").html(text);
-});
-</script>
-<!--ここまでSpreadSheetの一部を表示する-->	
-
 </main>
 <footer>
 		<hr><h2>サイトマップ</h2>

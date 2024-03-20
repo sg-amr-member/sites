@@ -10,6 +10,24 @@
 	<p><a href="index.html">ホームに戻る</a></p><hr>
 </header>
 <main>
+	<div class="button">
+		<button id="upScroll">一番上にスクロール</button>
+		<button id="downScroll">一番下にスクロール</button>
+		<script>
+			// 一番上へ
+			document.getElementById('upScroll').addEventListener('click', () => {
+			  var a = document.documentElement;
+			  var y = a.scrollHeight - a.clientHeight;
+			  window.scroll({top: 0});
+			});
+			// 一番下へ
+			document.getElementById('downScroll').addEventListener('click', () => {
+			  var a = document.documentElement;
+			  var y = a.scrollHeight - a.clientHeight;
+			  window.scroll(0, y);
+			});
+		</script>
+	</div>
 	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<div id="comments"></div>
 	<script>

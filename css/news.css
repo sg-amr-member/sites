@@ -34,3 +34,6 @@ a:hover{
 a:active{
     color: blueviolet;
 }
+html{
+    scroll-behavior: smooth; // スムーススクロール
+}

@@ -30,7 +30,7 @@
 			d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
 				var text = "";
 				for(var i=0; i<data.length; i++){
-					text +=　data[i].Timestamp + "<pre>" + data[i].Comments + "</pre>";
+					text +=　data[i].Timestamp + "<p>" + data[i].Comments + "</p>";
 				}
 				d3.select("#comments").html(text);
 			});

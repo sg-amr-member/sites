@@ -12,6 +12,9 @@ header p{
 .news{
     text-align: center;
 }
+#news p{
+    font-size: medium;
+}
 .overview{
     text-align: center;
 }

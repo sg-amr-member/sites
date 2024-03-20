@@ -1,0 +1,34 @@
+header{
+    background-image: url(../image/amorphous.png);
+    background-color: rgba(255, 255, 255, 0.562);
+    background-repeat: no-repeat;
+    width: auto;
+    height: 155px;
+    color: #333;
+}
+header p{
+    text-align: right;
+}
+.footer{
+    background-color: rgb(171, 224, 180);
+}
+
+footer{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color:blue;
+}
+a:visited{
+    color:blue
+}
+a:hover{
+    color:black;
+    background-color: rgb(189, 189, 255);
+}
+a:active{
+    color: blueviolet;
+}

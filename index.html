@@ -28,7 +28,7 @@
 			<div id="comments"></div>
 			<script>
 			d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
-				var text = "<div class=\"timestamp\"><p>" + data[date.length].Timestamp +"に配信されました。</p></div>" + data[date.length].Comments ;
+				var text = "<div class=\"timestamp\"><p>" + data[data.length - 1].Timestamp +"に配信されました。</p></div>" + data[data.length - 1].Comments ;
 				d3.select("#comments").html(text);
 			});
 			</script>

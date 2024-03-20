@@ -10,8 +10,17 @@
 	<p><a href="index.html">ホームに戻る</a></p><hr>
 </header>
 <main>
-
-
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<div id="comments"></div>
+	<script>
+	d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
+		var text = "";
+		for(var i=0; i<data.length; i++){
+			text += "<div class=\"timestamp\"><p>" + data[i].Timestamp +"に配信されました。</p></div>" + data[i].Comments ;
+		}
+		d3.select("#comments").html(text);
+	});
+	</script>
 </main>
 <footer>
 		<hr><h2>サイトマップ</h2>

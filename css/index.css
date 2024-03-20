@@ -12,7 +12,10 @@ header p{
 .news{
     text-align: center;
 }
-.news a{
+.overview a{
+    text-align: center;
+}
+.overview h3{
     text-align: center;
 }
 .footer{

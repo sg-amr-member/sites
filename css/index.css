@@ -15,6 +15,9 @@ header p{
 #news p{
     font-size: medium;
 }
+#news .timestamp{
+    font-size: small;
+}
 .overview{
     text-align: center;
 }

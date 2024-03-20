@@ -28,10 +28,10 @@
 			<div id="comments"></div>
 			<script>
 			d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
-				var texta = "<div class=\"timestamp\"><p>" + data[data.length - 1].Timestamp +"に配信されました。</p></div>" + data[data.length - 1].Comments ;
-				var textb = "<div class=\"timestamp\"><p>" + data[data.length - 2].Timestamp +"に配信されました。</p></div>" + data[data.length - 2].Comments ;
-				var textc = "<div class=\"timestamp\"><p>" + data[data.length - 3].Timestamp +"に配信されました。</p></div>" + data[data.length - 3].Comments ;
-				var textd = "<div class=\"timestamp\"><p>" + data[data.length - 4].Timestamp +"に配信されました。</p></div>" + data[data.length - 4].Comments ;
+				var texta = "<div class=\"timestamp\"><p>" + data[data.length - 1].Timestamp +"</p></div>" + data[data.length - 1].Comments ;
+				var textb = "<div class=\"timestamp\"><p>" + data[data.length - 2].Timestamp +"</p></div>" + data[data.length - 2].Comments ;
+				var textc = "<div class=\"timestamp\"><p>" + data[data.length - 3].Timestamp +"</p></div>" + data[data.length - 3].Comments ;
+				var textd = "<div class=\"timestamp\"><p>" + data[data.length - 4].Timestamp +"</p></div>" + data[data.length - 4].Comments ;
 				d3.select("#comments").html(texta + textb + textc + textd);
 			});
 			</script>

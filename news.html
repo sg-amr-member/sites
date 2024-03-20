@@ -15,7 +15,7 @@
 	<script>
 	d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
 		var text = "";
-		for(let i = date.length - 2; i >= 0; i--){
+		for(let i = date.length - 1; i >= 0; i--){
 			text += "<div class=\"timestamp\"><p>" + data[i].Timestamp +"</p></div>" + data[i].Comments ;
 		}
 		d3.select("#comments").html(text);

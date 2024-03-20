@@ -15,26 +15,55 @@
 	<div class="news">
 		<h3>お知らせ</h3>
 		<!--tag system 自動で反映されます。-->
-		<div id="news"></div>
-		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script>
-			d3.csv("https://docs.google.com/spreadsheets/d/3jI351MNKcyGvm8ZT7qvujRjH5Q3iPgk9Sw928e4aANw/export?format=csv&range=A3:D",function(erorr,date){
-				var.text=data[0].Mail;
-				d3.select("#news").html(text);
-			});	
-		</script>
-		
-		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<div id="comments"></div>
-		<script>
-		d3.csv("https://docs.google.com/spreadsheets/d/3jI351MNKcyGvm8ZT7qvujRjH5Q3iPgk9Sw928e4aANw/export?format=csv&range=A3:D", function(error, data){
-			var text = "";
-			for(var i=0; i<data.length; i++){
-				text += i+1 + " 名前: <a href=\"mailto:" + data[i].Mail + "\">" + data[i].Name + "</a> " + data[i].Timestamp + "<pre>" + data[i].Comments + "</pre>";
+		<!--google formのid
+			名前：1570347063
+			メールアドレス：285888699
+			コメント：793501872
+			id：1FAIpQLSc9xXlDi2w6MrJwnkVYnHXl8BiArXUrCVpXzhq50K_yN2hYmg
+			
+			spreadsheet
+			id：1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E
+		-->
+		<form action="https://docs.google.com/forms/d/e/1FAIpQLSc9xXlDi2w6MrJwnkVYnHXl8BiArXUrCVpXzhq50K_yN2hYmg/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
+			<p><input name="entry.1570347063" placeholder="名前" value="名無し" required></p>
+			<p><input name="entry.285888699" placeholder="メールアドレス" type="email"></p>
+			<p><textarea name="entry.793501872" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required></textarea></p>
+			<input type="submit" id="submitbutton" value="送信">
+			</form>
+			<iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
+			
+			<script type="text/javascript">
+			var NGComments = ["死ね","バカ",".exe"]; // 簡易的なNGワードの設定
+			var regex = new RegExp(NGComments.join("|"));
+			function test(wcheck) {
+				if (wcheck.match(regex) != null) {
+					alert("ERROR: コメントにNGワードが含まれています");
+					return false;
+				}
+				document.getElementById("submitbutton").disabled = true;
+				textareas = document.getElementsByTagName('textarea');
+				for(var i=0 ;i < textareas.length ;i ++ ){
+					textareas[i].value = textareas[i].value.replace( /</g ,'&lt;' );
+				}
+				inputs = document.getElementsByTagName('input');
+				for(var i=0 ;i < inputs.length ;i ++ ){
+					inputs[i].value = inputs[i].value.replace( /</g ,'&lt;' );
+				}
+				return submitted=!0;
 			}
-			d3.select("#comments").html(text);
-		});
-		</script>
+			</script>
+			<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+			<div id="comments"></div>
+			<script>
+			d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
+				var text = "";
+				for(var i=0; i<data.length; i++){
+					text += i+1 + " 名前: <a href=\"mailto:" + data[i].Mail + "\">" + data[i].Name + "</a> " + data[i].Timestamp + "<pre>" + data[i].Comments + "</pre>";
+				}
+				d3.select("#comments").html(text);
+			});
+			</script>
+		<!--tag system 終わり-->
 		<a href="news.html">詳しく､､､</a>
 	</div>
 	<hr>

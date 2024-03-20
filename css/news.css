@@ -9,10 +9,10 @@ header{
 header p{
     text-align: right;
 }
-#news p{
+.news p{
     font-size: medium;
 }
-#news .timestamp{
+.news .timestamp{
     font-size: small;
 }
 .footer{

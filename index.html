@@ -30,7 +30,7 @@
 			d3.csv("https://docs.google.com/spreadsheets/d/1XwuGD50P8OQYtswuloSw6U9xb6Ur4uQI_lwMpDQEz1E/export?format=csv&range=A3:D", function(error, data){
 				var text = "";
 				var display_number = 6;
-				for(var i = data.length; i > data.length - display_number || i > 0; i--){
+				for(var i=data.length; i>data.length - display_number; i--){
 					text += "<div class=\"timestamp\"><p>" + data[i].Timestamp +"に配信されました。</p></div>" + data[i].Comments ;
 				}
 				d3.select("#comments").html(text);

@@ -12,6 +12,9 @@ header p{
 .news{
     text-align: center;
 }
+.news a{
+    text-align: center;
+}
 .footer{
     background-color: rgb(171, 224, 180);
 }

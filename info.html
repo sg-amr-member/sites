@@ -82,7 +82,7 @@
     <script>
         function copyToClipboard() {
             var template_code = document.getElementById("template_code");
-		var copyTarget = html.decode( template_code );
+		var copyTarget = htmldecode( template_code );
 		copyTarget.select();
 		document.execCommand("Copy");
 		alert("テンプレートをコピーしました。");

@@ -62,7 +62,8 @@
 		&lt;script src=&quot;https://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 		&lt;div id=&quot;blog_link&quot;&gt;&lt;/div&gt;
 		&lt;script&gt;
-		d3.csv(&quot;https://docs.google.com/spreadsheets/d/[スプレッドシートのid]/export?format=csv&amp;range=A3:D&quot;, function(error, data){
+		d3.csv(&quot;https://docs.google.com/spreadsheets/d/[スプレッドシートのid]/export?format=csv&amp;range=A3:D&quot;, 
+	function(error, data){
 		var text = &quot;&quot;;
 		for(var i=0; i&lt;data.length; i++){
 			text +=  data[i].Comments;

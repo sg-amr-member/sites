@@ -72,7 +72,7 @@
 		});
 		&lt;/script&gt;
 		&lt;!--ブログへのリンクを自動追加終わり--&gt;
-		&lt;br&gt;&lt;p&gt;
+		&lt;br&gt;&lt;p&gt
 			&lt;a href=&quot;info.html&quot;&gt;Amorphousについて&lt;/a&gt;&lt;br&gt;
 			&lt;a href=&quot;member.html&quot;&gt;メンバー紹介&lt;/a&gt;&lt;br&gt;
 			&lt;a href=&quot;news.html&quot;&gt;お知らせ&lt;/a&gt;&lt;br&gt;
@@ -82,11 +82,13 @@
 &lt;/body&gt;</pre>
     <script>
         function copyToClipboard() {
-            var template_code = document.getElementById("template_code");
-			var copyTarget = encodeURI( template_code );
-			copyTarget.select();
-			document.execCommand("Copy");
-			alert("テンプレートをコピーしました。");
+            if (navigator.clipboard) { // サポートしているかを確認
+				var copyTarget = document.getElementById("template_code");
+    			navigator.clipboard.writeText(encodeURI( copyTarget ))
+				alert("テンプレートをコピーしました。");
+			}else{
+				alert("対応していません。")
+			}
         }
     </script>
 </main>

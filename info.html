@@ -30,8 +30,7 @@
 <li>フォルダblogの中に、自分の名前(偽名)のフォルダを作成して、その中にそれぞれのブログを作ってくれても構いません。<a href="https://github.com/sg-amr/sites/blog">ここから</a><br>ただし、内容はチームamorphousに準拠するものとしてください。</li>
 </ol>
 <h3>個人ブログ用テンプレート</h3>
-<p>ブログを編集する人向けにテンプレートを作成しました。是非利用してください。</p>
-<button onclick="copyToClipboard()">テンプレートをクリップボードにコピーする</button>
+<p>ブログを編集する人向けにテンプレートを作成しました。是非利用してください。これは更新されます。</p>
 <pre id="template_code">&lt;!DOCTYPE&gt;
 &lt;html&gt;
 &lt;!--これはブログ作成用テンプレートです。コメントを参考にしてください。--&gt;
@@ -57,21 +56,6 @@
 		&lt;h4&gt;サイトマップ&lt;/h4&gt;
 		&lt;p&gt;&lt;a href=&quot;index.html&quot;&gt;ホーム&lt;/a&gt;&lt;/p&gt;
 		&lt;h5&gt;&lt;a href=&quot;blog.html&quot;&gt;ブログ&lt;/a&gt;&lt;/h5&gt;
-		&lt;!--フッターのサイトマップを全ページで共通にしたいので、外部ファイルから読み込む形をとりました。--&gt;
-		&lt;!--ブログへのリンクを自動追加 #blog_linkにhtmlが追加されます。--&gt;
-		&lt;script src=&quot;https://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-		&lt;div id=&quot;blog_link&quot;&gt;&lt;/div&gt;
-		&lt;script&gt;
-		d3.csv(&quot;https://docs.google.com/spreadsheets/d/[スプレッドシートのid]/export?format=csv&amp;range=A3:D&quot;, 
-	function(error, data){
-		var text = &quot;&quot;;
-		for(var i=0; i&lt;data.length; i++){
-			text +=  data[i].Comments;
-		}
-		d3.select(&quot;#blog_link&quot;).html(text);
-		});
-		&lt;/script&gt;
-		&lt;!--ブログへのリンクを自動追加終わり--&gt;
 		&lt;br&gt;&lt;p&gt
 			&lt;a href=&quot;info.html&quot;&gt;Amorphousについて&lt;/a&gt;&lt;br&gt;
 			&lt;a href=&quot;member.html&quot;&gt;メンバー紹介&lt;/a&gt;&lt;br&gt;
@@ -80,17 +64,6 @@
 		&lt;/p&gt;
 	&lt;/footer&gt;
 &lt;/body&gt;</pre>
-    <script>
-        function copyToClipboard() {
-            if (navigator.clipboard) { // サポートしているかを確認
-				var copyTarget = document.getElementById("template_code");
-    			navigator.clipboard.writeText(encodeURI( copyTarget ))
-				alert("テンプレートをコピーしました。");
-			}else{
-				alert("対応していません。")
-			}
-        }
-    </script>
 </main>
 <footer>
 		<hr><h2>サイトマップ</h2>

@@ -35,6 +35,7 @@ a:hover{
 a:active{
     color: blueviolet;
 }
+/*ボタンの固定*/
 html{
     scroll-behavior: smooth;
 }

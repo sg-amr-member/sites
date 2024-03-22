@@ -18,6 +18,7 @@ header p{
 }
 footer{
     background-color: rgb(171, 224, 180);
+    text-align: center;
 }
 a{
     text-decoration: none;

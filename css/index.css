@@ -21,9 +21,6 @@ header p{
 .overview{
     text-align: center;
 }
-.footer{
-    background-color: rgb(171, 224, 180);
-}
 a{
     text-decoration: none;
 }
@@ -42,4 +39,5 @@ a:active{
 }
 footer{
     text-align: center;
+    background-color: rgb(171, 224, 180);
 }

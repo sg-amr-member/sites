@@ -1,0 +1,54 @@
+<!--これは公開サイトのブログ作成用テンプレートです。＊の部分（20・27・35行目）に入力してください。-->
+<!--blog/[偽名]/〜.htmlという構造ならば、問題はないが個人フォルダの中にさらにフォルダを作っている人は相対参照（＊相対参照注意のところ）がズレるので、注意-->
+<!--公開するときはコメントを削除してください。-->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google analysis tag-このページを解析するためのもの-->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMQ27CJKDV"></script>
+	<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-SMQ27CJKDV');
+	</script>
+	<!--Google tag finish>
+	<!--google analysis tag終わり-->
+	
+	<!--文字コードと、検索された時の設定-->
+	<meta charset="utf-8">
+	<title>Team Amorphous公式サイト-ブログ</title>
+	<!--＊-検索したとき出る説明を設定-->
+	<meta content="">
+	
+	<!--cssを読み込み-->
+	<!--共通部分のcssを読み込み・共通部分のcssはmain内はbackground-colorのみ設定しているので、競合することはないと思われる。-->
+	<link rel="stylesheet" href="../../css/base.css"><!--相対参照注意-->
+	<!--＊-このページ独自のcssを読み込み・cssはcssフォルダに追加するようにしてください。-->
+	<link rel="stylesheet" href="../../css/"><!--相対参照注意-->
+	
+</head>
+<body>
+	<div id="header"></div>
+	<!--後のjsでここに、base_header.htmlを読み込み、追加する-->
+
+	<main>
+		<!--＊内容-->
+		
+		<!--内容終わり-->
+	</main>
+
+	<div id="footer"></div>
+	<!--後のjsでここに、base_footer.htmlを読み込み、追加する-->
+</body>
+<!--base_header.htmlとbase_footer.htmlを読み込み、#headerと#footerに反映するjs-->
+<script>
+      fetch("../../base_header.html")//＊相対参照注意
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#header").innerHTML = data);
+      fetch("../../base_footer.html")//＊相対参照注意
+        .then((response) => response.text())
+        .then((data) => document.querySelector("#footer").innerHTML = data);
+</script>
+</html>

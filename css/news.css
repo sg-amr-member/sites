@@ -42,13 +42,12 @@ html{
 }
 #upscroll{
     margin-left:auto;
-    height: 100px;
-    width:  100px;
 }
 #downscroll{
     margin-right:auto;
 }
 button{
+  bottom: 0;
   display: inline-block; /* ボタンを横並びにする */
   border: none; /* 枠線をなくす */
   border-radius: 5px; /* 角丸をつける */

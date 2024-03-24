@@ -40,9 +40,8 @@ a:active{
 html{
     scroll-behavior: smooth;
 }
-button
-{
-    display: inline-block; /* ボタンを横並びにする */
+button{
+  display: inline-block; /* ボタンを横並びにする */
   border: none; /* 枠線をなくす */
   border-radius: 5px; /* 角丸をつける */
   padding: 10px 15px; /* ボタンの内側の余白 */
@@ -53,5 +52,5 @@ button
   text-decoration: none; /* テキストに下線をつけない */
   font-size: 15px; /* テキストのフォントサイズ */
   cursor: pointer; /* マウスポインタを変更する */
-
+  position: fixed;
 }

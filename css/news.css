@@ -47,8 +47,6 @@ html{
 }
 #downscroll{
     margin-right:auto;
-    height: 100px;
-    width:  100px;
 }
 button{
   display: inline-block; /* ボタンを横並びにする */

@@ -40,7 +40,7 @@ a:active{
 html{
     scroll-behavior: smooth;
 }
-.button
+button
 {
   position: fixed;
   bottom: 10px; 

@@ -40,6 +40,16 @@ a:active{
 html{
     scroll-behavior: smooth;
 }
+#upscroll{
+    margin-left:auto;
+    height: 100px;
+    width:  100px;
+}
+#downscroll{
+    margin-right:auto;
+    height: 100px;
+    width:  100px;
+}
 button{
   display: inline-block; /* ボタンを横並びにする */
   border: none; /* 枠線をなくす */

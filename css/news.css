@@ -42,14 +42,16 @@ html{
 }
 button
 {
-  position: fixed;
-  bottom: 10px; 
-  right: 10px;
-  padding: 6px 40px;
-  background: #000000;
-  color: #ffffff;
-  border-radius: 50vh;
-  padding: 1em 2em 0.8em;
-  line-height:1;
-  display: inline-block
+    display: inline-block; /* ボタンを横並びにする */
+  border: none; /* 枠線をなくす */
+  border-radius: 5px; /* 角丸をつける */
+  padding: 10px 15px; /* ボタンの内側の余白 */
+  margin: 5px; /* ボタン同士の余白 */
+  background-color: #96b97d; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  text-align: center; /* ボタンのテキストを中央揃えにする */
+  text-decoration: none; /* テキストに下線をつけない */
+  font-size: 15px; /* テキストのフォントサイズ */
+  cursor: pointer; /* マウスポインタを変更する */
+
 }
